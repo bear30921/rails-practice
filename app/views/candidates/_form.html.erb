@@ -1,0 +1,33 @@
+
+<!--
+舊的
+<%= form_for @candidate do |f| %>
+	<%= f.label :name, "姓名" %>
+	<%= f.text_field :name %> <br>
+
+	<%= f.label :age, "年齡" %>
+	<%= f.text_field :age %> <br>
+
+	<%= f.label :party, "政黨" %>
+	<%= f.text_field :party %> <br>
+
+	<%= f.label :politics, "政見" %>
+	<%= f.text_area :politics %> <br>
+
+	<%= f.submit %>
+<% end %>
+-->
+
+<!-- 下面這行用gem simple_form 結合bootstrap改寫 -->
+<%= simple_form_for @candidate do |f| %>
+	<%= f.input :name, label: "姓名" %>
+	<%= f.input :age, label: "年齡" %>
+	<%= f.input :party, label: "政黨" %>
+	<%= f.input :politics, label: "政見" %>
+	<%= f.submit %>
+<% end %>
+
+
+
+<br>
+<%= link_to "回候選人列表", candidates_path %>
